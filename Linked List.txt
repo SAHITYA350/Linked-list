@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct slist {
+    int data;
+    struct slist* next;
+};
+
+typedef struct slist node;
+
+node* start = NULL; 
+
+void display() {
+    node* tmp;
+    tmp = start;
+    if (tmp == NULL) {
+        printf("Empty..\n");
+    } else {
+        printf("Display : \n");
+        while (tmp != NULL) {
+
+           
+            printf("|%d|->", tmp->data);
+            tmp = tmp->next;
+        }
+        printf("NULL");
+    }
+}
+    void create() {
+    node* tmp, * tmp1;
+    tmp = (node*)malloc(sizeof(node));
+    printf("Enter data: ");
+    scanf("%d", &(tmp->data));
+     tmp->next = NULL;
+    if (start == NULL) {
+        start = tmp;
+    } else {
+        tmp1 = start;
+        while (tmp1->next != NULL){
+            tmp1 = tmp1->next;}
+        tmp1->next = tmp;
+    }
+}
+
+void firstinsert(){
+
+    node* temp;
+    temp=(node*)malloc(sizeof(node));
+   printf("\nEnter data for new node(insertion):\n");
+   scanf("%d",&(temp->data));
+     temp->next=NULL;
+   temp->next=start;
+start=temp;
+   printf("\nInsertion at first compleate sucssesfully.\n");
+}
+
+
+void lastinsert() {
+    node* tmp, * tmp1;
+    tmp = (node*)malloc(sizeof(node));
+    printf("\nEnter data for new node (last insertion):\n");
+    scanf("%d", &(tmp->data)); 
+
+    tmp->next = NULL; 
+
+    if (start == NULL) {
+
+        start = tmp;
+    } else {
+        tmp1 = start;
+        while (tmp1->next != NULL) {
+            tmp1 = tmp1->next;
+        }
+        tmp1->next = tmp;
+    }
+
+    printf("Insertion at the end completed successfully.\n");
+}
+
+
+
+int main() 
+{
+    int ch;
+  while(1)
+  {printf("\n");
+        printf("\n1->Create linked list\n2->Display linked list\n3->Insert at first operation\n4->Insertion at last operation\n5.Exit\n");
+          
+        printf("Enter your choice number: ");
+        scanf("%d", &ch);
+    if(ch==1)
+    create();
+else if(ch==2)
+display();
+else if(ch==3)
+firstinsert();
+else if(ch==4)
+lastinsert();
+else if(ch==5)
+exit(0);
+else
+printf("Wronng choice.");
+         }
+         return 0;
+    }
+    
+
