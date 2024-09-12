@@ -86,7 +86,7 @@ int main()
   {printf("\n");
         printf("\n1->Create linked list\n2->Display linked list\n3->Insert at first operation\n4->Insertion at last operation\n5.Exit\n");
           
-        printf("Enter your choice number: ");
+        printf("Enter your choice number:");
         scanf("%d", &ch);
     if(ch==1)
     create();
