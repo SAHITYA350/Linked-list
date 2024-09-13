@@ -1,2 +1,2 @@
 # Linked-list
-Insertion and deletion in c using linked list.
+Insertion at begin and end in c using linked list.
