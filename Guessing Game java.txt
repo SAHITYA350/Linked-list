@@ -1,0 +1,40 @@
+//JAVA PROJECT
+//GUESSING GAME
+
+
+import java.util.*;
+import java.util.Random;
+
+public class GuessingGame {
+   
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int num1 = rand.nextInt(100)+1;
+        int num2 = 0;
+        Scanner sc = new Scanner(System.in);
+
+        boolean win=true;
+        while(win==false){
+
+            System.out.println("Guess the number between 1 to 100:\n");
+            int guess = sc.nextInt();
+            num2++;
+            if(guess==num1){
+                break;
+            }else if(guess<num1){
+                System.out.println("Your guess is too low.");
+            }else if(guess>num1){
+                System.out.println("Your guess is too high.");
+            }else{
+                System.out.println("Exit.");
+            }
+        }
+        System.out.println("You win!");
+        System.out.println("The number is :"+num1);
+System.out.println("You will find the number of "+num2+" try.");
+    }
+}
+
+
+
+//THANK YOU...
